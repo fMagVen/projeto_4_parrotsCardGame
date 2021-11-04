@@ -6,6 +6,10 @@ body
 {
     background-color: #EEF9BF;
 }
+.flex
+{
+    display: flex;
+}
 .roboto
 {
     font-family: 'Roboto', sans-serif;
@@ -15,7 +19,6 @@ body
 {
     width: 100%;
     height: 150px;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -25,10 +28,41 @@ body
     font-size: 56px;
     color: #75B79E;
     text-align: center;
-    margin: 0 20px 0;
+    margin: 0 40px 0;
 }
 
-@media (max-width: 540px)
+.game
+{
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 80px 34px;
+    gap: 34px;
+}
+
+.pair
+{
+    flex-direction: column;
+    gap: 34px;
+}
+
+.card
+{
+    width: 117px;
+    height: 146px;
+    background-color: #A7E9AF;
+    border: 1px solid #99CEA8;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.front-parrot
+{
+    width: 100px;
+    height: 100px;
+}
+
+@media (max-width: 620px)
 {
     .header-title
     {
