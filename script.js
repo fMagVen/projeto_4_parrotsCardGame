@@ -9,29 +9,45 @@ while(amountOfCards % 2 != 0 || amountOfCards < 4 || amountOfCards > 14)
         amountOfCards = prompt("You must choose an even number! The number must also be between 2 and 14.")
 }
 
+let backParrots = ["bobrossparrot", "explodyparrot", "fiestaparrot", "metalparrot", "revertitparrot", "tripletsparrot", "unicornparrot"];
+    backParrots.sort(comparator);
+
 let cardSpace = document.querySelector(".game");
 
 for(let i = 2; i <= amountOfCards; i = i + 2)
 {
     cardSpace.innerHTML = cardSpace.innerHTML + `
     <div class="pair flex">
-            <div class="card flex" data-identifier="card">
-                <div class="front" data-identifier="front-face">
-                    <img class="front-parrot" src="/assets/front.png" alt="https://www.youtube.com/watch?v=nYc09Xqy3hE">
-                </div>
-                <div class="back" data-identifier="back-face">
-
-                </div>
+            <div class="card flex" data-identifier="card" onclick=turn(this)>
+            <div class="front side flex" data-identifier="front-face">
+                <img class="front-parrot" src="/assets/front.png" alt="vector drawing of a parrot facing left">
             </div>
-            <div class="card flex" data-identifier="card">
-                <div class="front" data-identifier="front-face">
-                    <img class="front-parrot" src="/assets/front.png" alt="https://www.youtube.com/watch?v=nYc09Xqy3hE">
-                </div>
-                <div class="back" data-identifier="back-face">
-
-                </div>
-
+            <div class="back side flex" data-identifier="back-face">
+                back side
             </div>
         </div>
+            <div class="card flex" data-identifier="card" onclick=turn(this)>
+            <div class="front side flex" data-identifier="front-face">
+                <img class="front-parrot" src="/assets/front.png" alt="vector drawing of a parrot facing left">
+            </div>
+            <div class="back side flex" data-identifier="back-face">
+                back side
+            </div>
+        </div>
+    </div>
     `
+}
+
+function comparator()
+{
+    return Math.random() - 0.5;
+}
+
+
+function turn(cardToTurn)
+{
+    let turningTheCard = cardToTurn.querySelector(".front");
+    turningTheCard.classList.add("front-turn");
+    turningTheCard = cardToTurn.querySelector(".back");
+    turningTheCard.classList.add("back-turn");
 }
