@@ -52,6 +52,8 @@ for (let i = 0; i < amountOfCards / 2; i++) {
     `
 }
 
+let switchOnclick = document.querySelectorAll(".card");
+
 function comparator() {
     return Math.random() - 0.5;
 }
@@ -63,12 +65,6 @@ function placeParrot() {
 
 
 function turn(cardToTurn) {
-
-    let tempDisable = document.querySelectorAll(".card");
-    for(let i = 0; i < amountOfCards; i++)
-    {
-        tempDisable[i];
-    }
 
     let turningTheCard = cardToTurn.querySelector(".front");
     turningTheCard.classList.add("front-turn");
@@ -95,6 +91,11 @@ function gameFlow() {
         if(firstCard !== secondCard)
         {
             setTimeout(turnBack, 2000);
+
+            for (let i = 0; i < amountOfCards; i++) {
+                console.log(switchOnclick[i]);
+                switchOnclick[i].removeAttribute("onclick");
+            }
         }
         else
         {
@@ -123,12 +124,18 @@ function turnBack()
     turningBack = turnTheseBack[1].querySelector(".back");
     turningBack.classList.remove("back-turn");
     turnTheseBack[1].classList.remove("recently-turned");
+
+    for (let i = 0; i < amountOfCards; i++) {
+        console.log(switchOnclick[i]);
+        switchOnclick[i].setAttribute("onclick", "turn(this)");
+    }
 }
 
 function endGame()
 {
     clearInterval(stopTimer);
-    let decision = prompt(`Você terminou em ${turnMoves} jogadas e ${secondsPlayed} segundos! Gostaria de jogar novamente? Digite qualquer coisa se sim.`);
+    let decision = prompt(`Você terminou em ${turnMoves} jogadas e ${secondsPlayed} segundos! 
+    Gostaria de jogar novamente? Clique OK(tecla enter) para sim e Cancelar(tecla Esc) para não.`);
 
     if(decision != null)
     {

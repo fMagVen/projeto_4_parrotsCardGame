@@ -3,7 +3,7 @@ Also using it to learn more about and to practice git and github!
 
 CHANGELOG:
 
-known issues: game breaking bug when multiple cards are selected one after the other in a short time
+0.7 - fixed a game breaking bug when multiple cards are selected one after the other in a short time
 
 0.6 - added timer, a requested functionality bonus, it will start after the first card is turned and stop after all cards are turned
       added the option to restart the game, a requested functionality bonus, which reloads the page
