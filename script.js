@@ -22,6 +22,11 @@ let parrotPlacer;
 let turnMoves = 0;
 let selectedCards;
 let numberOfTurnedCards;
+let gameStarted = 0;
+let secondsPlayed = 0;
+let stopTimer;
+
+let timerDisplay = document.querySelector(".timer-number");
 
 let cardSpace = document.querySelector(".game");
 for (let i = 0; i < amountOfCards / 2; i++) {
@@ -71,6 +76,13 @@ function turn(cardToTurn) {
     turningTheCard.classList.add("back-turn");
     cardToTurn.classList.add("recently-turned");
     turnMoves++;
+
+    if(gameStarted == 0)
+    {
+        gameStarted = 1;
+        stopTimer = setInterval(countSeconds, 1000);
+    }
+
     gameFlow();
 }
 function gameFlow() {
@@ -115,5 +127,17 @@ function turnBack()
 
 function endGame()
 {
-    alert(`Você terminou em ${turnMoves} jogadas!`);
+    clearInterval(stopTimer);
+    let decision = prompt(`Você terminou em ${turnMoves} jogadas e ${secondsPlayed} segundos! Gostaria de jogar novamente? Digite qualquer coisa se sim.`);
+
+    if(decision != null)
+    {
+        location.reload(true);
+    }
+}
+
+function countSeconds()
+{
+    secondsPlayed++;
+    timerDisplay.innerHTML = `play time: ${secondsPlayed} s`;
 }

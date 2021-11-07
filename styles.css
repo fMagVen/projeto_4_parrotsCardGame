@@ -21,6 +21,7 @@ body
     height: 150px;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 .header-title
 {
@@ -37,6 +38,20 @@ body
     flex-wrap: wrap;
     margin: 0 80px 34px;
     gap: 34px;
+}
+
+.game-timer
+{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.timer-number
+{
+    color: #75B79E;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 .pair
