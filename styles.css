@@ -82,8 +82,13 @@ body
 
 .front-parrot
 {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
+}
+.back-parrot
+{
+    width: 100%;
+    height: 100%;
 }
 
 @media (max-width: 620px)

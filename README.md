@@ -3,6 +3,9 @@ Also using it to learn more about and to practice git and github!
 
 CHANGELOG:
 
+0.4 - added final front card design
+      different pair of parrot gifs will be randomly given to all cards in the game
+
 0.3 - added card turning functionality based on card click
       added placeholder text on their back sides
 
