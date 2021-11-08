@@ -3,6 +3,8 @@ Also using it to learn more about and to practice git and github!
 
 CHANGELOG:
 
+1.0 - further testing, final version released
+
 0.8 - removed snippets of code for debugging purposes
       fixed small bug the timer would stay atop the title on the mobile view
 
