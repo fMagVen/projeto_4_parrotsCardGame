@@ -3,6 +3,9 @@ Also using it to learn more about and to practice git and github!
 
 CHANGELOG:
 
+0.8 - removed snippets of code for debugging purposes
+      fixed small bug the timer would stay atop the title on the mobile view
+
 0.7 - fixed a game breaking bug when multiple cards are selected one after the other in a short time
 
 0.6 - added timer, a requested functionality bonus, it will start after the first card is turned and stop after all cards are turned

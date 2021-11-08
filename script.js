@@ -83,7 +83,6 @@ function turn(cardToTurn) {
 }
 function gameFlow() {
     selectedCards = document.querySelectorAll(".card.recently-turned");
-    console.log(selectedCards);
     if(selectedCards.length == 2)
     {
         let firstCard = selectedCards[0].querySelector(".back-parrot").getAttribute('src');
@@ -93,7 +92,6 @@ function gameFlow() {
             setTimeout(turnBack, 2000);
 
             for (let i = 0; i < amountOfCards; i++) {
-                console.log(switchOnclick[i]);
                 switchOnclick[i].removeAttribute("onclick");
             }
         }
@@ -125,8 +123,8 @@ function turnBack()
     turningBack.classList.remove("back-turn");
     turnTheseBack[1].classList.remove("recently-turned");
 
-    for (let i = 0; i < amountOfCards; i++) {
-        console.log(switchOnclick[i]);
+    for (let i = 0; i < amountOfCards; i++)
+    {
         switchOnclick[i].setAttribute("onclick", "turn(this)");
     }
 }
@@ -135,9 +133,9 @@ function endGame()
 {
     clearInterval(stopTimer);
     let decision = prompt(`Você terminou em ${turnMoves} jogadas e ${secondsPlayed} segundos! 
-    Gostaria de jogar novamente? Clique OK(tecla enter) para sim e Cancelar(tecla Esc) para não.`);
+    Gostaria de jogar novamente? Responda 'sim' para reiniciar.`);
 
-    if(decision != null)
+    if(decision == "sim")
     {
         location.reload(true);
     }
