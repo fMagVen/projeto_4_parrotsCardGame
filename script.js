@@ -89,7 +89,7 @@ function gameFlow() {
         let secondCard = selectedCards[1].querySelector(".back-parrot").getAttribute('src');
         if(firstCard !== secondCard)
         {
-            setTimeout(turnBack, 2000);
+            setTimeout(turnBack, 1000);
 
             for (let i = 0; i < amountOfCards; i++) {
                 switchOnclick[i].removeAttribute("onclick");

@@ -3,6 +3,9 @@ Also using it to learn more about and to practice git and github!
 
 CHANGELOG:
 
+1.0.1 - small, overdue fix implemented to conform to request
+        time wrong cards stay turned reduced from 2 to 1 second
+
 1.0 - further testing, final version released
 
 0.8 - removed snippets of code for debugging purposes
